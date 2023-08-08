@@ -3,7 +3,7 @@ class CreateBills < ActiveRecord::Migration[7.0]
     create_table :bills do |t|
       t.references :author, null: false, foreign_key: { to_table: :users }
       t.string :name
-      t.decimal :amount, precision: 10, scale: 2
+      t.integer :amount
 
       t.timestamps
     end
