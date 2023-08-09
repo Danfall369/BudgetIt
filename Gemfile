@@ -77,3 +77,6 @@ end
 
 # Devise Authentication
 gem 'devise'
+
+# CanCanCan Authorization
+gem 'cancancan'

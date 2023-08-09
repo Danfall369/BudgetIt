@@ -1,6 +1,7 @@
 class BillsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_bill, only: %i[show edit update destroy]
+  load_and_authorize_resource
 
   # GET /bills or /bills.json
   def index
@@ -20,7 +21,7 @@ class BillsController < ApplicationController
 
   # POST /bills or /bills.json
   def create
-    @bill = Bill.new(bill_params)
+    @bill = current_user.bills.new(bill_params)
 
     respond_to do |format|
       if @bill.save
@@ -65,6 +66,6 @@ class BillsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def bill_params
-    params.require(:bill).permit(:author_id, :name, :amount)
+    params.require(:bill).permit(:name, :amount)
   end
 end

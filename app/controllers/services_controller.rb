@@ -1,10 +1,11 @@
 class ServicesController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_service, only: %i[show edit update destroy]
 
   # GET /services or /services.json
   def index
-    @services = Service.all
+    @user = current_user.services.includes(:services, :bills)
   end
 
   # GET /services/1 or /services/1.json
@@ -20,7 +21,7 @@ class ServicesController < ApplicationController
 
   # POST /services or /services.json
   def create
-    @service = Service.new(service_params)
+    @service = current_user.services.new(service_params)
 
     respond_to do |format|
       if @service.save
@@ -65,6 +66,6 @@ class ServicesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def service_params
-    params.require(:service).permit(:author_id, :name, :icon)
+    params.require(:service).permit(:name, :icon)
   end
 end
