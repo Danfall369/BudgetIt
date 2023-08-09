@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'splash/index'
+  devise_for :users
+  
 
   root 'splash#index'
 
   resources :bills
   resources :services
-  resources :users
 end
