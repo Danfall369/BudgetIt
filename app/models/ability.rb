@@ -5,7 +5,7 @@ class Ability
     user ||= User.new # Guest user (not logged in)
 
     # Define abilities based on user roles and permissions
-    if user.admin?
+    if user.admin
       can :manage, :all # Admin can perform any action on any model
     else
       # Regular user permissions

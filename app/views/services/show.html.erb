@@ -1,10 +1,51 @@
-<p style="color: green"><%= notice %></p>
+<nav>
+  <div>
+    <%= button_to "Back", services_path, method: :get %>
+  </div>
+
+  <div>
+    <h1><%= @service.name %> Bills</h1>
+  </div>
+
+  <div>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+  </div>
+</nav>
 
 <%= render @service %>
 
 <div>
-  <%= link_to "Edit this service", edit_service_path(@service) %> |
-  <%= link_to "Back to services", services_path %>
+  <p>
+    <%= link_to "View Most Recent", service_path(@service, order: "recent") %>
+    <%= link_to "View Most Older", service_path(@service, order: "Ancient") %>
+  </p>
+  
+  <% sorted_bills = if params[:order] == "Ancient"
+                      @service.bills.order(created_at: :asc)
+                    else
+                      @service.bills.order(created_at: :desc)
+                    end %>
+  <hr />
+  
+  <% if sorted_bills.any? %>
+    <% sorted_bills.each do |b| %>
+      <p>Bill N° <%= b.id %></p>
+      <p><%= b.created_at.strftime("%d %b %Y at %I:%M%p") %></p>
+      <p><%= b.name %></p>
+      <p>$<%= b.amount %></p>
+      <hr />
+    <% end %>
+  <% else %>
+    <p>No bills to display.</p>
+  <% end %>
+</div>
 
-  <%= button_to "Destroy this service", @service, method: :delete %>
+<div>
+  <% if current_user.admin? %>
+    <%= button_to "Edit this service", edit_service_path(@service), method: :get %>
+    <%= button_to "Destroy this service", @service, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+    <%= button_to "New bill", new_bill_path, method: :get %>
+  <% elsif can?(:destroy, @service) %>
+    <%= button_to "New bill", new_bill_path, method: :get %>
+  <% end %>
 </div>
