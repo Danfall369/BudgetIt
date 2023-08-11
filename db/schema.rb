@@ -10,17 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_09_020022) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_11_012115) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bill_service", id: false, force: :cascade do |t|
+    t.bigint "bill_id", null: false
+    t.bigint "service_id", null: false
+    t.index ["bill_id", "service_id"], name: "index_bill_service_on_bill_id_and_service_id", unique: true
+    t.index ["bill_id"], name: "index_bill_service_on_bill_id"
+    t.index ["service_id"], name: "index_bill_service_on_service_id"
+  end
 
   create_table "bills", force: :cascade do |t|
     t.bigint "author_id", null: false
     t.string "name"
-    t.integer "amount"
+    t.decimal "amount", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_bills_on_author_id"
+  end
+
+  create_table "bills_services", force: :cascade do |t|
+    t.bigint "bill_id", null: false
+    t.bigint "service_id", null: false
+    t.index ["bill_id", "service_id"], name: "index_bills_services_on_bill_id_and_service_id", unique: true
+    t.index ["bill_id"], name: "index_bills_services_on_bill_id"
+    t.index ["service_id"], name: "index_bills_services_on_service_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -30,6 +46,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_09_020022) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_services_on_author_id"
+  end
+
+  create_table "services_bills", id: false, force: :cascade do |t|
+    t.bigint "service_id", null: false
+    t.bigint "bill_id", null: false
+    t.index ["bill_id"], name: "index_services_bills_on_bill_id"
+    t.index ["service_id", "bill_id"], name: "index_services_bills_on_service_id_and_bill_id", unique: true
+    t.index ["service_id"], name: "index_services_bills_on_service_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,6 +70,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_09_020022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bill_service", "bills"
+  add_foreign_key "bill_service", "services"
   add_foreign_key "bills", "users", column: "author_id"
+  add_foreign_key "bills_services", "bills"
+  add_foreign_key "bills_services", "services"
   add_foreign_key "services", "users", column: "author_id"
+  add_foreign_key "services_bills", "bills"
+  add_foreign_key "services_bills", "services"
 end
