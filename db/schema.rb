@@ -16,11 +16,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_09_020022) do
 
   create_table "bills", force: :cascade do |t|
     t.bigint "author_id", null: false
+    t.bigint "service_id", null: false
     t.string "name"
-    t.integer "amount"
+    t.decimal "amount", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_bills_on_author_id"
+    t.index ["service_id"], name: "index_bills_on_service_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -46,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_09_020022) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bills", "services"
   add_foreign_key "bills", "users", column: "author_id"
   add_foreign_key "services", "users", column: "author_id"
 end
