@@ -7,5 +7,5 @@ bill = Bill.create(author_id: 1, service_id: 1,  name: "Netflix", amount: 123.0)
 bill2 = Bill.create(author_id: 1, service_id: 1, name: "HBO Max", amount: 123.0)
 
 
-bill3 = Bill.create(author_id: 1, service_id: 2,  name: "Minalba", amount: 0.80)
+bill3 = Bill.create(author_id: 1, service_id: 2,  name: "Minalba", amount: 1.50)
 bill4 = Bill.create(author_id: 1, service_id: 2, name: "Cielo", amount: 1.0)

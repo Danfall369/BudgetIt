@@ -4,6 +4,6 @@ class BillsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @bills = Bill.includes(:services)
+    @bills = current_user.bills.includes(:service)
   end
 end

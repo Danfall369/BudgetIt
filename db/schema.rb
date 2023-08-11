@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_09_020022) do
     t.bigint "author_id", null: false
     t.bigint "service_id", null: false
     t.string "name"
-    t.integer "amount"
+    t.decimal "amount", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_bills_on_author_id"

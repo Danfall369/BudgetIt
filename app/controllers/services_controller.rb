@@ -4,6 +4,6 @@ class ServicesController < ApplicationController
   before_action :set_service, only: %i[show edit update destroy]
 
   def index
-    @services = Service.includes(:bills)
+    @services = current_user.services.includes(:bills)
   end
 end
