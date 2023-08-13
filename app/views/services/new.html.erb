@@ -1,13 +1,12 @@
-<nav>
-  <div>
-    <%= button_to "Back", services_path, method: :get %>
-  </div>
+<%= stylesheet_link_tag "service_new" %>
 
+<nav class="service-nav">
+  <div class=actions>
+    <img src="<%= asset_path('navigate_left.png') %>" alt="Logo" width="16px" >
+    <%= link_to "Back", services_path, class: "link-sign" %>
+  </div>
   <div>
     <h1>New Service</h1>
-  </div>
-  <div>
-    <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
   </div>
 </nav>
 
