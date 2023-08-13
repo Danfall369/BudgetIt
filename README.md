@@ -19,13 +19,13 @@ Everything will be based on the ERD class diagram presented below.
 <table>
   <tr>
      <td>Splash Page</td>
-     <td>Categories Page</td>
-     <td>Transactions Page</td>
+     <td>Services Page</td>
+     <td>Bills Page</td>
   </tr>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/80895497/149399069-130286e2-702e-403a-b713-1fa2b2c76832.PNG" width=270 height=480></td>
-    <td><img src="https://user-images.githubusercontent.com/80895497/149399077-3f968a63-e965-4c7d-81b1-faa98ed0d7aa.PNG" width=270 height=480></td>
-    <td><img src="https://user-images.githubusercontent.com/80895497/149399078-32dc8367-d76a-4255-8109-475835647212.PNG" width=270 height=480></td>
+    <td><img src="https://i.imgur.com/gaWa3dH.png" width=270 height=480></td>
+    <td><img src="https://i.imgur.com/gdgjd6o.png" width=270 height=480></td>
+    <td><img src="https://i.imgur.com/ZYlZqVn.png" width=270 height=480></td>
   </tr>
  </table>
 
@@ -38,13 +38,13 @@ To run the project locally, copy up and running follow these simple example step
 - clone the project with the following command line :
 
 ```
-$ git clone git@github.com:Hamzaoutdoors/BLog_app.git
+$ git clone https://github.com/Danfall369/BudgetIt.git
 ```
 
 - Then go to the right folder
 
 ```
-$ cd E_Wallet_app
+$ cd BudgetIt
 ```
 
 ```
@@ -96,11 +96,10 @@ $ bundle exec rspec
 
 ## Authors
 
-👤 **Ellaouzi Hamza**
+👤 **Daniel Falcon** 
 
-- GitHub: [hamzaoutdoors](https://github.com/Hamzaoutdoors)
-- LinkedIn : [Hamza Ellaouzi](https://www.linkedin.com/in/hamza-ellaouzi-137a45b8/)
-- Twitter: [Hamza Ellaouzi](https://twitter.com/EllaouziHamza)
+- GitHub: [Github](https://github.com/Danfall369) |
+- LinkedIn: [Linkedin](https://www.linkedin.com/in/danfall369/)
 
 ## 🤝 Contributing
 
@@ -123,4 +122,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](https://github.com/Hamzaoutdoors/E_Wallet_app/blob/dev/LICENSE.md) licensed.
+This project is [MIT](./LICENSE) licensed.
