@@ -1,6 +1,5 @@
 https://www.loom.com/share/31f34b854b6a459bae68b8a272c9666b
 
-
 # Budget it! app
 
 A **Budget app** is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
@@ -15,7 +14,7 @@ Everything will be based on the ERD class diagram presented below.
 
 ## Live demo link
 
-[Live server](https://Budget it!-app1.herokuapp.com/)
+[Live server](https://rails-1app.onrender.com/)
 
 #### Budge App Screenshots
 
@@ -99,7 +98,7 @@ $ bundle exec rspec
 
 ## Authors
 
-👤 **Daniel Falcon** 
+👤 **Daniel Falcon**
 
 - GitHub: [Github](https://github.com/Danfall369)
 - LinkedIn: [Linkedin](https://www.linkedin.com/in/danfall369/)
