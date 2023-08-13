@@ -98,14 +98,14 @@ $ bundle exec rspec
 
 👤 **Daniel Falcon** 
 
-- GitHub: [Github](https://github.com/Danfall369) |
+- GitHub: [Github](https://github.com/Danfall369)
 - LinkedIn: [Linkedin](https://www.linkedin.com/in/danfall369/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Hamzaoutdoors/E_Wallet_app/issues).
+Feel free to check the [issues page](https://github.com/Danfall369/BudgetIt/issues).
 
 ## Show your support
 
