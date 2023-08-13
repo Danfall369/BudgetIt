@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'splash#index'
 
+  resources :users
   resources :services
   resources :bills
 end

@@ -1,16 +1,16 @@
-<div id="<%= dom_id service %>">
+<div class="service-card" id="<%= dom_id service %>">
 
-  <div classname="service-image">
+  <div class="service-image">
     <img src="<%= service.icon %>" alt="<%= service.name %>" />
   </div>
 
-  <div classname="service-info">
-    <%= service.name %>
-    <%= service.created_at.strftime("%d %b %Y") %>
+  <div class="service-info">
+    <b><%= service.name %></b>
+    <p><%= service.created_at.strftime("%d %b %Y") %></p>
   </div>
 
-  <div classname="service-total-amount">
-    $<%= service.bills.sum(:amount) %>
+  <div class="service-total-amount">
+    <b>$<%= service.bills.sum(:amount) %></b>
   </div>
 
 </div>
