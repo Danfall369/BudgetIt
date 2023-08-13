@@ -4,7 +4,7 @@ RSpec.describe 'serviceShow', type: :system do
   before(:each) do
     driven_by(:rack_test)
     @user = User.create!(name: 'John', email: 'testing@ruby.com',
-                          password: 'password', admin: false)
+                         password: 'password', admin: false)
     @service = Service.create!(name: 'Test service', icon: 'icon1.svg', author_id: @user.id)
     @bill1 = Bill.create!(name: 'Test bill 1', amount: 50.0, service_id: @service.id, author_id: @user.id)
     @bill2 = Bill.create!(name: 'Test bill 2', amount: 50.0, service_id: @service.id, author_id: @user.id)
