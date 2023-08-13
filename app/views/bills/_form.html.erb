@@ -1,4 +1,4 @@
-<%= form_with(model: bill) do |form| %>
+<%= form_with(model: bill, html: { class: 'Add-bill' }) do |form| %>
   <% if bill.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
@@ -11,22 +11,19 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Bill Name" %>
   </div>
 
-  <div>
-    <%= form.label :amount %>
-    <%= form.number_field :amount, step: "any" %>
+  <div class="field">
+    <%= form.number_field :amount, step: "any", placeholder: "Bill Amount" %>
   </div>
 
-  <div>
-    <%= form.label :service_id %>
+  <div class="field">
     <%= form.collection_select(:service_id, @services, :id, :name, { include_blank: "Select Service" }) %>
   </div>
 
-  <div>
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>

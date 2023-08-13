@@ -3,7 +3,7 @@
 <nav class="service-nav">
   <h1>Services</h1>
   <div class="actions">
-    <%= link_to "Sign out", destroy_user_session_path, class: "link-sign" %>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "link-sign" %>
     <img src="<%= asset_path('door_exit.png') %>" alt="Logo" width="16px" >
   </div>
 </nav>

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 5rem;
+  gap: 6rem;
   height: 3.5rem;
   padding-left: 5px;
   background: #3778c2;
@@ -29,44 +29,52 @@
   font-size: small;
 }
 
-/* Add-Service */
-.Add-service {
+/* Add-bill */
+.Add-bill {
   max-width: 350px;
-  margin: 165px auto;
+  margin: 140px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.Add-service h2 {
+.Add-bill h2 {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.Add-service .field {
+.Add-bill .field {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 }
 
-.Add-service label {
-  font-weight: bold;
-}
-
-.Add-service input[type="text"] {
+.Add-bill input[type="text"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-.Add-service .actions {
+.Add-bill input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#bill_service_id {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.Add-bill .actions {
   text-align: center;
   margin-top: 20px;
 }
 
-.Add-service input[type="submit"] {
+.Add-bill input[type="submit"] {
   width: 100%;
   padding: 10px 20px;
   background-color: #3778c2;
