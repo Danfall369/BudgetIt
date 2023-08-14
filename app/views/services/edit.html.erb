@@ -1,0 +1,16 @@
+<nav>
+  <div>
+    <%= button_to "Back", services_path, method: :get %>
+  </div>
+
+  <div>
+    <h1>Edit Service</h1>
+  </div>
+
+  <div>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+  </div>
+</nav>
+
+<%= render "form", service: @service %>
+

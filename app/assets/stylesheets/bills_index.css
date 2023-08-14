@@ -1,0 +1,128 @@
+body {
+  background: rgb(231, 231, 231);
+}
+
+.service-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8rem;
+  height: 3.5rem;
+  padding-left: 5px;
+  background: #3778c2;
+}
+
+.service-nav h1 {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding-right: 5px;
+}
+
+.link-sign {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: small;
+}
+
+.service-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  width: 98%;
+  height: 5rem;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.service-card img {
+  width: 48px;
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sorted-cont {
+  display: flex;
+  justify-content: space-evenly;
+  background: #fff;
+  width: 98%;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.sorted-link {
+  text-decoration: none;
+  color: #434b54;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+}
+
+.cards-cont {
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 21.3rem;
+}
+
+.bill {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  height: 4.3rem;
+  margin: 13px auto;
+  background: #fff;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.bill-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.bill-info p {
+  text-decoration: none;
+  color: #434b54;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+}
+
+.bill-info .bill-date {
+  font-size: 10px;
+}
+
+.bills-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5fb523;
+  padding: 5px;
+}
+
+.btn-add {
+  outline: none;
+  border: 1px solid #ffd;
+  border-radius: 5px;
+  background: #5fb523;
+  color: #fff;
+  padding: 10px;
+  width: 20rem;
+}

@@ -1,0 +1,29 @@
+<%= form_with(model: bill, html: { class: 'Add-bill' }) do |form| %>
+  <% if bill.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+
+      <ul>
+        <% bill.errors.each do |attribute, message| %>
+          <li><%= "#{attribute.to_s.humanize} #{message}" %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Bill Name" %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :amount, step: "any", placeholder: "Bill Amount" %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_select(:service_id, @services, :id, :name, { include_blank: "Select Service" }) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

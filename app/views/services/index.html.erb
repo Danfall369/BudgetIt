@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "service_index" %>
+
+<nav class="service-nav">
+  <h1>Services</h1>
+  <div class="actions">
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "link-sign" %>
+    <img src="<%= asset_path('door_exit.png') %>" alt="Logo" width="16px" >
+  </div>
+</nav>
+
+<div class="service-cont">
+  <div class="cards-cont">
+    <% if @services.any? %>
+      <% @services.each do |service| %>
+        <%= link_to service, class: 'services' do %>
+          <%= render service %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>No services to display</p>
+    <% end %>
+  </div>
+
+  <div class="service-actions">
+    <%= button_to "NEW SERVICE", new_service_path, method: :get, class: "btn-add" %>
+  </div>
+</div>

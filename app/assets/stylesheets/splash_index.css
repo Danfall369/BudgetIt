@@ -1,0 +1,55 @@
+body {
+  background: #fff;
+}
+
+.splash-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  padding-top: 5rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.logo h1 {
+  color: #434b54;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-size: 40px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn-sign {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #3778c2;
+  color: #fff;
+  padding: 10px;
+  width: 20rem;
+}
+
+.btn-log {
+  border: 1px solid #434b54;
+  outline: none;
+  border-radius: 5px;
+  background: #fff;
+  padding: 10px;
+  width: 20rem;
+}

@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag "splash_index" %>
+
+<div class="splash-cont">
+    <div class="logo">
+        <img src="<%= asset_path('budget-logo.png') %>" alt="Logo" >
+        <h1>Budget It!</h1>
+    </div>
+
+    <div class="actions">
+        <%= button_to "SIGN UP", new_user_registration_path, method: :get, class: "btn-sign" %> 
+        <%= button_to "LOG IN", new_user_session_path, class: "btn-log" %>
+    </div>
+</div>

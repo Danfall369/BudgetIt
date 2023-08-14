@@ -1,0 +1,56 @@
+<%= stylesheet_link_tag "bills_index" %>
+
+<nav class="service-nav">
+  <div class=actions>
+    <img src="<%= asset_path('navigate_left.png') %>" alt="Logo" width="16px" >
+    <%= link_to "Back", services_path, class: "link-sign" %>
+  </div>
+  <div>
+    <h1>Bills</h1>
+  </div>
+</nav>
+
+
+<%= render @service %>
+
+<div class="sorted-cont">
+  <p><%= link_to "● Most Recent", service_path(@service, order: "recent"), class: "sorted-link" %></p>
+  <p><%= link_to "● Most Older", service_path(@service, order: "Ancient"), class: "sorted-link" %></p>
+
+  <% sorted_bills = if params[:order] == "Ancient"
+                      @service.bills.order(created_at: :asc)
+                    else
+                      @service.bills.order(created_at: :desc)
+                    end %>
+</div>
+
+<div class="bills-cont">
+  <div class="cards-cont">
+    <% if sorted_bills.any? %>
+      <% sorted_bills.each do |b| %>
+        <div class="bill">
+          <b>Bill N° <%= b.id %></b>
+            <div class="bill-info">
+              <p><%= b.name %></p>
+              <p class="bill-date"><%= b.created_at.strftime("%d %b %Y at %I:%M%p") %></p>
+            </div>
+          <p>$<%= b.amount %></p>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="bill">
+        <p>No bills to display.</p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="bills-actions">
+    <% if current_user.admin? %>
+      <%= button_to "Edit this service", edit_service_path(@service), method: :get %>
+      <%= button_to "Destroy this service", @service, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+      <%= button_to "New bill", new_bill_path, method: :get %>
+    <% elsif can?(:destroy, @service) %>
+      <%= button_to "NEW BILL", new_bill_path, method: :get, class: "btn-add" %>
+    <% end %>
+  </div>
+</div>
